@@ -3,9 +3,15 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "heroku-postbuild": "cd client && npm install && npm run build"
+        "heroku-postbuild": "cd client && npm install --legacy-peer-deps && npm run build"
     },
     "dependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
         "react-paypal-button-v2": "^2.6.3"
+    },
+    "engines": {
+        "node": "16.x",
+        "npm": "8.x"
     }
 }
