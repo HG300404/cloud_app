@@ -6,9 +6,9 @@
         "heroku-postbuild": "cd client && npm install --legacy-peer-deps && npm run build"
     },
     "dependencies": {
+        "express": "^4.21.2",
         "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-paypal-button-v2": "^2.6.3"
+        "react-dom": "^17.0.2"
     },
     "engines": {
         "node": "18.x",
