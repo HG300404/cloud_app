@@ -6,6 +6,7 @@
         "heroku-postbuild": "cd client && npm install --legacy-peer-deps && npm run build"
     },
     "dependencies": {
+        "dotenv": "^16.4.7",
         "express": "^4.21.2",
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
