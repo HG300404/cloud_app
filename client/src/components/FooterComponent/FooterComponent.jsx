@@ -13,10 +13,12 @@ import {
   InstagramOutlined,
   YoutubeOutlined,
 } from "@ant-design/icons";
-import logo from "../../assets/images/logo.png";
+
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import InputForm from "../InputForm/InputForm";
 
+const logo =
+  "https://hakingdoms.s3.ap-southeast-2.amazonaws.com/images/logo.png";
 const FooterComponent = () => {
   const styleLi = {
     color: "#fff",

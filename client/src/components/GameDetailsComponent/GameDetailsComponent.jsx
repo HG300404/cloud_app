@@ -1,7 +1,6 @@
 import { Col, Row, Image, Rate } from "antd";
 import React, { useEffect, useState } from "react";
-import imageProduct from "../../assets/images/garena.jpg";
-import imageProductSmall from "../../assets/images/top3.jfif";
+
 import {
   WrapperPriceProduct,
   WrapperPriceTextProduct,
@@ -24,6 +23,10 @@ import LikeButtonComponent from "../LikeButtonComponent/LikeButtonComponent.jsx"
 import CommentComponent from "../CommentComponent/CommentComponent.jsx";
 import { initFacebookSDK } from "../../utils.js";
 
+const imageProduct =
+  "https://hakingdoms.s3.ap-southeast-2.amazonaws.com/images/garena.jpg";
+const imageProductSmall =
+  "https://hakingdoms.s3.ap-southeast-2.amazonaws.com/images/top3.jfif";
 const ProductDetailsComponent = ({ idGame }) => {
   const [stateGameDetails, setStateGameDetails] = useState({
     name: "",
@@ -55,11 +58,11 @@ const ProductDetailsComponent = ({ idGame }) => {
     }
   };
   useEffect(() => {
-    initFacebookSDK()
+    initFacebookSDK();
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     if (idGame) {
       fetchGetDetailsGame(idGame);
     }
@@ -128,11 +131,9 @@ const ProductDetailsComponent = ({ idGame }) => {
               src={stateGameDetails.image}
               alt="Image Product"
               preview={false}
-              style={{ width: "450px", height: "400px",  }}
+              style={{ width: "450px", height: "400px" }}
             />
           </Row>
-
-          
         </Col>
         <Col span={14} style={{ paddingLeft: "90px" }}>
           <WrapperStyleNameProduct>
@@ -152,7 +153,9 @@ const ProductDetailsComponent = ({ idGame }) => {
               {priceProduct(stateGameDetails.price, stateGameDetails.discount)}$
             </WrapperPriceTextProduct>
           </WrapperPriceProduct>
-         <LikeButtonComponent dataHref = {"https://developers.facebook.com/docs/plugins/"} />
+          <LikeButtonComponent
+            dataHref={"https://developers.facebook.com/docs/plugins/"}
+          />
           {/* <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div> */}
           <div
             style={{
@@ -256,7 +259,7 @@ const ProductDetailsComponent = ({ idGame }) => {
         <div>
           <h2>Game Details</h2>
           <ul>
-            <li style={{ paddingBottom: "20px",paddingLeft: "20px" }}>
+            <li style={{ paddingBottom: "20px", paddingLeft: "20px" }}>
               <u style={{ color: "#9932CC" }}>Genres:</u>{" "}
               {stateGameDetails.type}
             </li>
@@ -270,14 +273,19 @@ const ProductDetailsComponent = ({ idGame }) => {
             <li style={{ paddingBottom: "20px", paddingLeft: "20px" }}>
               <u style={{ color: "#9932CC" }}>Related Day:</u> 12/9/2012
             </li>
-            <li style={{ paddingBottom: "20px" , paddingLeft: "20px"}}>
+            <li style={{ paddingBottom: "20px", paddingLeft: "20px" }}>
               <u style={{ color: "#9932CC" }}> Ratings:</u>
               {stateGameDetails.rating}
             </li>
           </ul>
         </div>
       </div>
-      <CommentComponent dataHref={"https://developers.facebook.com/docs/plugins/comments#configurator"} width="1270" />
+      <CommentComponent
+        dataHref={
+          "https://developers.facebook.com/docs/plugins/comments#configurator"
+        }
+        width="1270"
+      />
     </div>
   );
 };

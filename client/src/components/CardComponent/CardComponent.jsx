@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import g1 from "../../assets/images/pubg.png";
+
+const g1 = "https://hakingdoms.s3.ap-southeast-2.amazonaws.com/images/pubg.png";
 
 const cardStyle = {
   width: "280px",

@@ -9,7 +9,6 @@ import {
   WrapperContainerRight,
   WrapperTextLight,
 } from "./style";
-import imageLogo from "../../assets/images/logo-signin.jfif";
 import { useLocation, useNavigate } from "react-router-dom";
 import * as UserService from "../../services/UserService.js";
 import { useMutationHooks } from "../../hooks/userMutationHook";
@@ -34,6 +33,8 @@ const SignInPage = () => {
     });
     // console.log("signin", email, password);
   };
+  const imageLogo =
+    "https://hakingdoms.s3.ap-southeast-2.amazonaws.com/images/logo-signin.jfif";
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();

@@ -6,7 +6,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
-  background-image: url("/src/assets/images/body-bg.jpg");
+  background-image: url("https://hakingdoms.s3.ap-southeast-2.amazonaws.com/images/body-bg.jpg");
   font-family: "Oxanium", cursive;
 }
 

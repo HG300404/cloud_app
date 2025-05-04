@@ -13,7 +13,7 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import ButtonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
-import logo from "../../assets/images/logo.png";
+
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
 import { useNavigate, Link } from "react-router-dom";
@@ -35,6 +35,9 @@ import { searchGame } from "../../redux/slides/gameSlide";
 // const styleTextLi = {
 //   color: "red",
 // };
+
+const logo =
+  "https://hakingdoms.s3.ap-southeast-2.amazonaws.com/images/logo.png";
 
 const HeaderComponent = ({
   isHiddenSearch = false,

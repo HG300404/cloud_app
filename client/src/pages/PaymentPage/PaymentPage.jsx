@@ -19,7 +19,7 @@ import * as PaymentService from "../../services/PaymentService";
 import { updateUser } from "../../redux/slides/userSlide";
 import { Navigate, useNavigate } from "react-router-dom";
 import { removeAllOrderGame } from "../../redux/slides/orderSlide";
-// import { PayPalButton } from "react-paypal-button-v2";
+import { PayPalButton } from "react-paypal-button-v2";
 const PaymentPage = () => {
   const order = useSelector((state) => state.order);
   const user = useSelector((state) => state.user);
@@ -281,19 +281,30 @@ const PaymentPage = () => {
                 </span>
               </WrapperTotal>
             </div>
-            <ButtonComponent
-              onClick={() => handleAddOrder()}
-              size={40}
-              styleButton={{
-                backgroundColor: "#ff0000",
-                padding: "10px 20px",
-                borderRadius: "5px",
-                marginTop: "20px",
-              }}
-              textButton={"Order"}
-              styleTextButton={{ color: "#fff" }}
-            ></ButtonComponent>
-
+            {payment === "paypal" && sdkReady ? (
+              <div style={{ width: "320px" }}>
+                <PayPalButton
+                  amount="710"
+                  onSuccess={onSuccessPaypal}
+                  onError={() => {
+                    alert("error");
+                  }}
+                />
+              </div>
+            ) : (
+              <ButtonComponent
+                onClick={() => handleAddOrder()}
+                size={40}
+                styleButton={{
+                  backgroundColor: "#ff0000",
+                  padding: "10px 20px",
+                  borderRadius: "5px",
+                  marginTop: "20px",
+                }}
+                textButton={"Order"}
+                styleTextButton={{ color: "#fff" }}
+              ></ButtonComponent>
+            )}
           </WrapperRight>
         </div>
       </div>
